@@ -22,23 +22,8 @@ public class Homework1{
 ![Alt homework11](./images/homework1.jpg)
 
 
-public class Homework1{
-  public static void main(String[] args) {
-		int i, j;
-		for(i=0; i<10; i++) {
-			  for(j=0; j<=i; j++) {
-			    System.out.print(" ");
-			  }
-			  for(; j<=10; j++) {
-			    System.out.print("#");
-			  }
-			  System.out.println();
-			}
-	}
-
-}
-
 ### Homework2
+---java
 public class Fibonacci {
     public static void main(String[] args) {
         int count = 20;
@@ -60,6 +45,7 @@ public class Fibonacci {
 }
 
 ### Homework3
+---java
 public class GoldenRatio {
     public static void main(String[] args) {
         long a = 1; // F_1
@@ -81,4 +67,4 @@ public class GoldenRatio {
 }
 
 ### Homework4
-
+---java
