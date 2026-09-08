@@ -2,6 +2,17 @@
 ### Homework1
 ```java
 public class Homework1{
+  public static void main(String []args){
+    int i, j;
+    for(i=0; i<10; i++) {
+      for(j=0; j<10; j++) {
+        System.out.print("#");
+      }
+      System.out.println("");
+    }
+  }
+}
+public class Homework1{
   public static void main(String[] args) {
 		int i, j;
 		for(i=0; i<10; i++) {
@@ -17,7 +28,25 @@ public class Homework1{
 
 }
 ### Homework2
+public class Fibonacci {
+    public static void main(String[] args) {
+        int count = 20;
+        long[] fibonacci = new long[count];
+        
+        fibonacci[0] = 1;
+        fibonacci[1] = 1;
 
+        for (int i = 2; i < count; i++) {
+            fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
+        }
+
+        
+        System.out.println("피보나치 수열 (1 ~ 20번째):");
+        for (int i = 0; i < count; i++) {
+            System.out.print(fibonacci[i] + " ");
+        }
+    }
+}
 
 ### Homework3
 public class GoldenRatio {
@@ -27,11 +56,9 @@ public class GoldenRatio {
         
         System.out.println("=== 피보나치 황금비율 계산 (1~20번째) ===");
 
-        // F_2 / F_1 부터 F_21 / F_20 까지 총 20개의 비율 계산
         for (int i = 1; i <= 20; i++) {
-            long next = a + b; // 다음 피보나치 수 (F_n+1)
+            long next = a + b;
             
-            // double 형변환을 통해 소수점 연산 수행
             double ratio = (double) b / a; 
             
             System.out.printf("%2d번째: %d / %d = %.6f%n", i, b, a, ratio);
@@ -43,3 +70,4 @@ public class GoldenRatio {
 }
 
 ### Homework4
+
