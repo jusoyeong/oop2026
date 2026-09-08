@@ -23,7 +23,7 @@ public class Homework1{
 
 
 ### Homework2
----java
+
 public class Fibonacci {
     public static void main(String[] args) {
         int count = 20;
