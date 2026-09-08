@@ -1,12 +1,9 @@
 # OOP2026
 ### Homework1
 ```java
-
 public class BootSpringBootApplication {
   public static void main(String[] args) {
     System.out.println("Hello, Honeymon");
-  }
-}
 public class Homework1{
   public static void main(String []args){
     int i, j;
@@ -18,6 +15,23 @@ public class Homework1{
     }
   }
 }
+
+```
+![Alt homework11](./images/homework1.jpg)
+
+
+
+
+# OOP2026
+### Homework1
+```java
+
+public class BootSpringBootApplication {
+  public static void main(String[] args) {
+    System.out.println("Hello, Honeymon");
+  }
+}
+
 public class Homework1{
   public static void main(String[] args) {
 		int i, j;
@@ -33,6 +47,7 @@ public class Homework1{
 	}
 
 }
+
 ### Homework2
 public class Fibonacci {
     public static void main(String[] args) {
