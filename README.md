@@ -24,7 +24,7 @@ public class Homework1{
 
 ### Homework2
 
-public class Fibonacci {
+public class Homework2 {
     public static void main(String[] args) {
         int count = 20;
         long[] fibonacci = new long[count];
@@ -45,8 +45,8 @@ public class Fibonacci {
 }
 
 ### Homework3
----java
-public class GoldenRatio {
+
+public class Homework3 {
     public static void main(String[] args) {
         long a = 1; // F_1
         long b = 1; // F_2
@@ -67,4 +67,6 @@ public class GoldenRatio {
 }
 
 ### Homework4
----java
+
+
+### Homework5
