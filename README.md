@@ -1,6 +1,12 @@
 # OOP2026
 ### Homework1
 ```java
+
+public class BootSpringBootApplication {
+  public static void main(String[] args) {
+    System.out.println("Hello, Honeymon");
+  }
+}
 public class Homework1{
   public static void main(String []args){
     int i, j;
