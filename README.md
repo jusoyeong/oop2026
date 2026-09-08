@@ -87,7 +87,7 @@ public class Homework4 {
 
 
 ### Homework7
-public class SelectionSort {
+public class Homework7 {
     public static void main(String[] args) {
         int[] data = new int[20];
 
@@ -130,7 +130,7 @@ public class SelectionSort {
 
 ### Homework8
 
-public class StudentScores {
+public class Homework8 {
     public static void main(String[] args) {
         int studentCount = 30;
         int subjectCount = 4;
