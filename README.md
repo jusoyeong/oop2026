@@ -68,5 +68,96 @@ public class Homework3 {
 
 ### Homework4
 
+public class Homework4 {
+    public static void main(String[] args) {
+        for (int i = 1; i <= 9; i++) {
+            for (int j = 1; j <= 9; j++) {
+                
+                System.out.printf("%d*%d=%-2d\t", j, i, j * i);
+            }
+            System.out.println(); // 한 줄 출력 후 줄바꿈
+        }
+    }
+}
 
 ### Homework5
+
+
+### Homework6
+
+
+### Homework7
+public class SelectionSort {
+    public static void main(String[] args) {
+        int[] data = new int[20];
+
+    
+        for (int i = 0; i < 20; i++) {
+            data[i] = (int) (Math.random() * 100);
+        }
+
+        
+        System.out.println("=== 정렬 전 ===");
+        for (int i = 0; i < 20; i++) {
+            System.out.print(data[i] + " ");
+        }
+        System.out.println("\n");
+
+        
+        for (int i = 0; i < data.length - 1; i++) {
+            int minIndex = i; 
+
+          
+            for (int j = i + 1; j < data.length; j++) {
+                if (data[j] < data[minIndex]) {
+                    minIndex = j;
+                }
+            }
+
+            int temp = data[i];
+            data[i] = data[minIndex];
+            data[minIndex] = temp;
+
+        
+        System.out.println("=== 정렬 후 (오름차순) ===");
+        for (int i = 0; i < 20; i++) {
+            System.out.print(data[i] + " ");
+        }
+        System.out.println();
+    }
+}
+
+
+### Homework8
+
+public class StudentScores {
+    public static void main(String[] args) {
+        int studentCount = 30;
+        int subjectCount = 4;
+        
+        
+        int[][] score = new int[studentCount][subjectCount];
+        
+        for (int i = 0; i < studentCount; i++) {
+            for (int j = 0; j < subjectCount; j++) {
+                score[i][j] = (int) (Math.random() * 101);
+            }
+        }
+        
+        System.out.println("번호\t국어\t영어\t수학\t과학\t합계");
+        System.out.println("--------------------------------------------");
+
+        
+        for (int i = 0; i < studentCount; i++) {
+            int sum = 0;
+            System.out.printf("%-2d\t", i + 1); 
+
+            for (int j = 0; j < subjectCount; j++) {
+                System.out.printf("%d\t", score[i][j]);
+                sum += score[i][j]; 
+            }
+
+            System.out.printf("%d\n", sum); 
+        }
+    }
+}
