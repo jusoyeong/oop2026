@@ -112,8 +112,10 @@ public class Homework3 {
 }
 ```
 
-### Homework4
 
+# Homework4
+
+```java
 public class Homework4 {
     public static void main(String[] args) {
         for (int i = 1; i <= 9; i++) {
@@ -125,12 +127,41 @@ public class Homework4 {
         }
     }
 }
+```
 
 ### Homework5
 
 
-### Homework6
 
+# Homework6
+
+```java
+public class Homework6 {
+    public static void main(String[] args) {
+        int n = 7; // 출력할 행의 개수 (0~6행)
+        int[][] binomial = new int[n][n];
+
+        // 1. 이항계수(파스칼 삼각형) 계산 및 배열 채우기
+        for (int i = 0; i < n; i++) {
+            binomial[i][0] = 1; // 각 행의 첫 번째 값은 1
+            binomial[i][i] = 1; // 각 행의 마지막 값은 1
+
+            for (int j = 1; j < i; j++) {
+                // binomial[i][j] = 바로 위 2개 값의 합
+                binomial[i][j] = binomial[i - 1][j - 1] + binomial[i - 1][j];
+            }
+        }
+
+        // 2. 이항계수 삼각형 출력
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j <= i; j++) {
+                System.out.print(binomial[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+```
 
 ### Homework7
 public class Homework7 {
