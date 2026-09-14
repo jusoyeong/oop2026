@@ -24,11 +24,14 @@ public class Homework1{
 
 ### Homework2
 
-public class Homework2 {
-    public static void main(String[] args) {
-        int count = 20;
+## Homework2
+
+```java
+public class Homework2 { 
+    public static void main(String[] args) { 
+        int count = 20; 
         long[] fibonacci = new long[count];
-        
+
         fibonacci[0] = 1;
         fibonacci[1] = 1;
 
@@ -36,13 +39,13 @@ public class Homework2 {
             fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
         }
 
-        
         System.out.println("피보나치 수열 (1 ~ 20번째):");
         for (int i = 0; i < count; i++) {
             System.out.print(fibonacci[i] + " ");
         }
     }
 }
+```
 
 ### Homework3
 
