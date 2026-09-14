@@ -6,7 +6,6 @@ public class Homework1 {
     public static void main(String[] args) {
         int i, j;
 
-        // 1. 좌하단 직각삼각형
         for (i = 0; i < 10; i++) {
             for (j = 0; j < 10; j++) {
                 if (j <= i) {
@@ -19,7 +18,6 @@ public class Homework1 {
         }
         System.out.println("");
 
-        // 2. 우상단 직각삼각형
         for (i = 0; i < 10; i++) {
             for (j = 0; j < 10; j++) {
                 if (j >= i) {
@@ -32,7 +30,6 @@ public class Homework1 {
         }
         System.out.println("");
 
-        // 3. 우하단 직각삼각형
         for (i = 0; i < 10; i++) {
             for (j = 0; j < 10; j++) {
                 if (j >= 9 - i) {
@@ -45,7 +42,6 @@ public class Homework1 {
         }
         System.out.println("");
 
-        // 4. 좌상단 직각삼각형
         for (i = 0; i < 10; i++) {
             for (j = 0; j < 10; j++) {
                 if (j <= 9 - i) {
@@ -58,7 +54,9 @@ public class Homework1 {
         }
     }
 }
+
 ```
+
 ![Alt homework11](./images/homework1-1.jpg)
 ![Alt homework11](./images/homework1-2.jpg)
 
@@ -84,9 +82,12 @@ public class Homework2 {
         }
     }
 }
+
 ```
 
 ![Alt homework11](./images/homework2.jpg)
+
+
 
 # Homework3
 
@@ -111,7 +112,9 @@ public class Homework3 {
     }
 }
 ```
+
 ![Alt homework11](./images/homework3.jpg)
+
 
 # Homework4
 
@@ -123,13 +126,17 @@ public class Homework4 {
                 
                 System.out.printf("%d*%d=%-2d\t", j, i, j * i);
             }
-            System.out.println(); // 한 줄 출력 후 줄바꿈
+            System.out.println();
         }
     }
 }
 ```
+
 ![Alt homework11](./images/homework4.jpg)
-### Homework5
+
+
+# Homework5
+
 
 
 
@@ -138,10 +145,9 @@ public class Homework4 {
 ```java
 public class Homework6 {
     public static void main(String[] args) {
-        int n = 7; // 출력할 행의 개수 (0~6행)
+        int n = 7; 
         int[][] binomial = new int[n][n];
 
-        // 1. 이항계수(파스칼 삼각형) 계산 및 배열 채우기
         for (int i = 0; i < n; i++) {
             binomial[i][0] = 1; // 각 행의 첫 번째 값은 1
             binomial[i][i] = 1; // 각 행의 마지막 값은 1
@@ -152,7 +158,6 @@ public class Homework6 {
             }
         }
 
-        // 2. 이항계수 삼각형 출력
         for (int i = 0; i < n; i++) {
             for (int j = 0; j <= i; j++) {
                 System.out.print(binomial[i][j] + " ");
@@ -162,79 +167,165 @@ public class Homework6 {
     }
 }
 ```
-![Alt homework11](./images/homework7.jpg)
-### Homework7
-public class Homework7 {
+
+![Alt homework11](./images/homework6.jpg)
+
+
+# Homework7
+
+```java
+public class Main {
     public static void main(String[] args) {
         int[] data = new int[20];
 
-    
         for (int i = 0; i < 20; i++) {
             data[i] = (int) (Math.random() * 100);
         }
 
-        
         System.out.println("=== 정렬 전 ===");
         for (int i = 0; i < 20; i++) {
             System.out.print(data[i] + " ");
         }
         System.out.println("\n");
 
-        
+        // 2. 선택 정렬 (Selection Sort)
         for (int i = 0; i < data.length - 1; i++) {
             int minIndex = i; 
 
-          
             for (int j = i + 1; j < data.length; j++) {
                 if (data[j] < data[minIndex]) {
-                    minIndex = j;
+                    minIndex = j; 
                 }
             }
 
             int temp = data[i];
             data[i] = data[minIndex];
             data[minIndex] = temp;
+        }
 
-        
-        System.out.println("=== 정렬 후 (오름차순) ===");
+        System.out.println("=== 정렬 후 (선택 정렬) ===");
         for (int i = 0; i < 20; i++) {
             System.out.print(data[i] + " ");
         }
         System.out.println();
     }
 }
+```
 
+# Homework8
 
-### Homework8
+```java
 
-public class Homework8 {
+public class Main {
     public static void main(String[] args) {
-        int studentCount = 30;
-        int subjectCount = 4;
-        
-        
-        int[][] score = new int[studentCount][subjectCount];
-        
-        for (int i = 0; i < studentCount; i++) {
-            for (int j = 0; j < subjectCount; j++) {
-                score[i][j] = (int) (Math.random() * 101);
-            }
-        }
-        
+        // 30명 학생, 4과목 (0:국어, 1:영어, 2:수학, 3:과학)
+        int[][] score = new int[30][4];
+
         System.out.println("번호\t국어\t영어\t수학\t과학\t합계");
-        System.out.println("--------------------------------------------");
+        System.out.println("----------------------------------------");
 
-        
-        for (int i = 0; i < studentCount; i++) {
+        for (int i = 0; i < 30; i++) {
             int sum = 0;
-            System.out.printf("%-2d\t", i + 1); 
-
-            for (int j = 0; j < subjectCount; j++) {
-                System.out.printf("%d\t", score[i][j]);
-                sum += score[i][j]; 
+            
+            for (int j = 0; j < 4; j++) {
+                score[i][j] = (int) (Math.random() * 101);
+                sum += score[i][j];
             }
 
-            System.out.printf("%d\n", sum); 
+            System.out.printf("%2d\t%d\t%d\t%d\t%d\t%d%n", 
+                (i + 1), score[i][0], score[i][1], score[i][2], score[i][3], sum);
         }
     }
 }
+```
+
+
+# HomeWork10
+
+```java
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        int[] data = new int[100];
+        int[] bin = new int[10];
+
+        for (int i = 0; i < 100; i++) {
+            data[i] = (int) (Math.random() * 100);
+            
+            int index = data[i] / 10;
+            bin[index]++;
+        }
+
+        // 2. 도수분포표(히스토그램) 출력
+        System.out.println("=== 100개 데이터 도수분포표 ===");
+        for (int i = 0; i < 10; i++) {
+            int start = i * 10;
+            int end = start + 9;
+
+            System.out.printf("%2d ~ %2d\t: ", start, end);
+            for (int j = 0; j < bin[i]; j++) {
+                System.out.print("#");
+            }
+
+            System.out.printf(" (%d)%n", bin[i]);
+        }
+    }
+}
+```
+
+# HomeWork11
+
+```java
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) {
+        int n = 100;
+        int[] data = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            data[i] = (int) (Math.random() * 100) + 1;
+        }
+
+        // 산술평균 (Arithmetic Mean)
+        double sum = 0;
+        for (int i = 0; i < n; i++) {
+            sum += data[i];
+        }
+        double arithmeticMean = sum / n;
+
+        // 기하평균 (Geometric Mean)
+        double logSum = 0;
+        for (int i = 0; i < n; i++) {
+            logSum += Math.log(data[i]);
+        }
+        double geometricMean = Math.exp(logSum / n);
+
+        // 조화평균 (Harmonic Mean)
+        // n / (1/x1 + 1/x2 + ... + 1/xn)
+        double harmonicSum = 0;
+        for (int i = 0; i < n; i++) {
+            harmonicSum += 1.0 / data[i];
+        }
+        double harmonicMean = n / harmonicSum;
+
+        // 중앙값 (Median) 
+        int[] sortedData = data.clone();
+        Arrays.sort(sortedData);
+        
+        double median;
+        if (n % 2 == 0) {
+            median = (sortedData[n / 2 - 1] + sortedData[n / 2]) / 2.0;
+        } else {
+            median = sortedData[n / 2];
+        }
+
+        System.out.println("=== Homework11: 통계 지표 계산 ===");
+        System.out.printf("산술평균 (Arithmetic Mean) : %.4f%n", arithmeticMean);
+        System.out.printf("기하평균 (Geometric Mean)  : %.4f%n", geometricMean);
+        System.out.printf("조화평균 (Harmonic Mean)   : %.4f%n", harmonicMean);
+        System.out.printf("중앙값   (Median)          : %.4f%n", median);
+    }
+}
+```
