@@ -1,28 +1,67 @@
 # OOP2026
-### Homework1
+# Homework1
+
 ```java
-public class BootSpringBootApplication {
-  public static void main(String[] args) {
-    System.out.println("Hello, Honeymon");
+public class Homework1 {
+    public static void main(String[] args) {
+        int i, j;
 
+        // 1. 좌하단 직각삼각형
+        for (i = 0; i < 10; i++) {
+            for (j = 0; j < 10; j++) {
+                if (j <= i) {
+                    System.out.print("#");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println("");
+        }
+        System.out.println("");
 
-public class Homework1{
-  public static void main(String []args){
-    int i, j;
-    for(i=0; i<10; i++) {
-      for(j=0; j<10; j++) {
-        System.out.print("#");
-      }
-      System.out.println("");
+        // 2. 우상단 직각삼각형
+        for (i = 0; i < 10; i++) {
+            for (j = 0; j < 10; j++) {
+                if (j >= i) {
+                    System.out.print("#");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println("");
+        }
+        System.out.println("");
+
+        // 3. 우하단 직각삼각형
+        for (i = 0; i < 10; i++) {
+            for (j = 0; j < 10; j++) {
+                if (j >= 9 - i) {
+                    System.out.print("#");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println("");
+        }
+        System.out.println("");
+
+        // 4. 좌상단 직각삼각형
+        for (i = 0; i < 10; i++) {
+            for (j = 0; j < 10; j++) {
+                if (j <= 9 - i) {
+                    System.out.print("#");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println("");
+        }
     }
-  }
 }
-
 ```
 ![Alt homework11](./images/homework1.jpg)
 
 
-### Homework2
 
 ## Homework2
 
@@ -47,8 +86,11 @@ public class Homework2 {
 }
 ```
 
-### Homework3
 
+
+# Homework3
+
+```java
 public class Homework3 {
     public static void main(String[] args) {
         long a = 1; // F_1
@@ -68,6 +110,7 @@ public class Homework3 {
         }
     }
 }
+```
 
 ### Homework4
 
