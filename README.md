@@ -60,7 +60,7 @@ public class Homework1 {
 }
 ```
 ![Alt homework11](./images/homework1-1.jpg)
-
+![Alt homework11](./images/homework1-2.jpg)
 
 
 ## Homework2
@@ -86,7 +86,7 @@ public class Homework2 {
 }
 ```
 
-
+![Alt homework11](./images/homework2.jpg)
 
 # Homework3
 
@@ -111,7 +111,7 @@ public class Homework3 {
     }
 }
 ```
-
+![Alt homework11](./images/homework3.jpg)
 
 # Homework4
 
@@ -128,7 +128,7 @@ public class Homework4 {
     }
 }
 ```
-
+![Alt homework11](./images/homework4.jpg)
 ### Homework5
 
 
@@ -162,7 +162,7 @@ public class Homework6 {
     }
 }
 ```
-
+![Alt homework11](./images/homework7.jpg)
 ### Homework7
 public class Homework7 {
     public static void main(String[] args) {
