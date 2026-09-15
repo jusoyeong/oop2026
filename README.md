@@ -188,7 +188,7 @@ public class Main {
         }
         System.out.println("\n");
 
-        // 2. 선택 정렬 (Selection Sort)
+        
         for (int i = 0; i < data.length - 1; i++) {
             int minIndex = i; 
 
