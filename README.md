@@ -212,6 +212,10 @@ public class Main {
 }
 ```
 
+![Alt homework11](./images/homework7.jpg)
+
+
+
 # Homework8
 
 ```java
@@ -237,6 +241,8 @@ public class Main {
     }
 }
 ```
+
+![Alt homework11](./images/homework8.jpg)
 
 
 # HomeWork10
@@ -271,6 +277,9 @@ public class Main {
     }
 }
 ```
+
+![Alt homework11](./images/homework10.jpg)
+
 
 # HomeWork11
 
@@ -327,3 +336,5 @@ public class Main {
     }
 }
 ```
+
+![Alt homework11](./images/homework11.jpg)
