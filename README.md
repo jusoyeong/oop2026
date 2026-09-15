@@ -218,7 +218,6 @@ public class Main {
 
 public class Main {
     public static void main(String[] args) {
-        // 30명 학생, 4과목 (0:국어, 1:영어, 2:수학, 3:과학)
         int[][] score = new int[30][4];
 
         System.out.println("번호\t국어\t영어\t수학\t과학\t합계");
@@ -257,7 +256,6 @@ public class Main {
             bin[index]++;
         }
 
-        // 2. 도수분포표(히스토그램) 출력
         System.out.println("=== 100개 데이터 도수분포표 ===");
         for (int i = 0; i < 10; i++) {
             int start = i * 10;
