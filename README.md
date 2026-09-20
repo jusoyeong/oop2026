@@ -137,8 +137,39 @@ public class Homework4 {
 
 # Homework5
 
+```java
+public class PiApproximation {
+    public static void main(String[] args) {
+        int iterations = 100000; 
 
+        double piGregory = 0.0;
+        for (int k = 0; k < iterations; k++) {
+            double term = 4.0 / (2 * k + 1);
+            if (k % 2 == 1) { 
+                piGregory -= term;
+            } else {         
+                piGregory += term;
+            }
+        }
 
+        // Madhava Series 구현
+        
+        double sumMadhava = 0.0;
+        for (int k = 0; k < iterations; k++) {
+            double numerator = Math.pow(-1.0 / 3.0, k);
+            double denominator = 2 * k + 1;
+            sumMadhava += numerator / denominator;
+        }
+        double piMadhava = Math.sqrt(12) * sumMadhava;
+
+       
+        System.out.println("=== 원주율(PI) 계산 결과 (반복 횟수: " + iterations + "회) ===");
+        System.out.println("Gregory-Leibniz 결과 : " + piGregory);
+        System.out.println("Madhava 결과          : " + piMadhava);
+        System.out.println("실제 Math.PI 값       : " + Math.PI);
+    }
+}
+```
 
 # Homework6
 
