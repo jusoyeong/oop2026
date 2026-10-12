@@ -372,4 +372,100 @@ public class Main {
 
 ![Alt homework11](./images/homework11.jpg)
 
-# HomeWork12
+# HomeWork13
+
+```
+import java.util.Scanner;
+
+public class miniCalculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("계산기 프로그램");
+        System.out.println("사용법: 2 + 3 또는 32 # 54 / 7 (종료하려면 exit 입력)");
+        
+        while(true) {
+            System.out.print("\n입력 > ");
+            String inputString = scanner.nextLine().trim();
+            
+            // 종료 조건
+            if(inputString.equalsIgnoreCase("exit")) {
+                System.out.println("프로그램을 종료합니다.");
+                break;
+            }
+            
+            if(inputString.isEmpty()) {
+                continue;
+            }
+            
+            String[] arrOfStr = inputString.split(" ");
+            
+            try {
+                double result = 0;
+                
+                if (arrOfStr.length == 3) {
+                    double num1 = Double.parseDouble(arrOfStr[0]);
+                    String op = arrOfStr[1];
+                    double num2 = Double.parseDouble(arrOfStr[2]);
+                    
+                    result = calculate(num1, op, num2);
+                    System.out.println("결과: " + result);
+                    
+                } else if (arrOfStr.length == 5) {
+                    double num1 = Double.parseDouble(arrOfStr[0]);
+                    String op1 = arrOfStr[1];
+                    double num2 = Double.parseDouble(arrOfStr[2]);
+                    String op2 = arrOfStr[3];
+                    double num3 = Double.parseDouble(arrOfStr[4]);
+                    
+                    result = evaluateExpression(num1, op1, num2, op2, num3);
+                    System.out.println("결과: " + result);
+                    
+                } else {
+                    System.out.println("잘못된 형식입니다. 피연산자와 연산자 사이를 띄워주세요.");
+                }
+                
+            } catch (NumberFormatException e) {
+                System.out.println("올바른 숫자를 입력해주세요.");
+            } catch (ArithmeticException e) {
+                System.out.println("연산 오류: " + e.getMessage());
+            }
+        }
+        
+        scanner.close();
+    }
+    
+    public static double calculate(double a, String op, double b) {
+        switch(op) {
+            case "+":
+                return a + b;
+            case "-":
+                return a - b;
+            case "#":
+            case "*":
+                return a * b;
+            case "/":
+                if(b == 0) {
+                    throw new ArithmeticException("0으로 나눌 수 없습니다.");
+                }
+                return a / b;
+            default:
+                throw new IllegalArgumentException("지원하지 않는 연산자입니다: " + op);
+        }
+    }
+    
+    public static double evaluateExpression(double n1, String op1, double n2, String op2, double n3) {
+       
+        if ((op2.equals("#") || op2.equals("*") || op2.equals("/")) && (op1.equals("+") || op1.equals("-"))) {
+            double temp = calculate(n2, op2, n3);
+            return calculate(n1, op1, temp);
+        } else {
+
+            double temp = calculate(n1, op1, n2);
+            return calculate(temp, op2, n3);
+        }
+    }
+}
+```
+
+# HomeWork14
