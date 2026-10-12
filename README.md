@@ -374,7 +374,7 @@ public class Main {
 
 # HomeWork13
 
-```
+```java
 import java.util.Scanner;
 
 public class miniCalculator {
