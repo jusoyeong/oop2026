@@ -467,5 +467,5 @@ public class miniCalculator {
     }
 }
 ```
-![Alt homework11](./images/homework13.jpg)
+![Alt homework13](./images/homework13.jpg)
 # HomeWork14
