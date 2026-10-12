@@ -468,4 +468,120 @@ public class miniCalculator {
 }
 ```
 ![Alt Homework13](./images/Homework13.jpg)
+
 # HomeWork14
+
+```java
+import java.util.Arrays;
+
+class Numbers {
+    int num[];
+    
+    Numbers(int num[]) {
+        this.num = num;
+    }
+    
+    double getTotal() {
+        double sum = 0;
+        for(int i = 0; i < num.length; i++) sum += num[i];
+        return sum;
+    }
+    
+    double getArithmaticMean() {
+        return getTotal() / num.length;
+    }
+    
+    // 조화평균 (Harmonic Mean)
+    double getHarmonicMean() {
+        double sum = 0;
+        for(int i = 0; i < num.length; i++) {
+            if(num[i] == 0) return 0.0;
+            sum += 1.0 / num[i];
+        }
+        return num.length / sum;
+    }
+    
+    // 기하평균 (Geometric Mean)
+    double getGeometricMean() {
+        double logSum = 0;
+        for(int i = 0; i < num.length; i++) {
+            if(num[i] <= 0) return 0.0;
+            logSum += Math.log(num[i]);
+        }
+        return Math.exp(logSum / num.length);
+    }   
+    
+    // 중앙값 (Median)
+    double getMedian() {
+        int[] sorted = num.clone();
+        Arrays.sort(sorted);
+        int mid = sorted.length / 2;
+        if(sorted.length % 2 == 0) {
+            return (sorted[mid - 1] + sorted[mid]) / 2.0;
+        } else {
+            return sorted[mid];
+        }
+    }
+    
+    
+    void sorting() {
+        Arrays.sort(num);
+    }
+    
+    // 도수분포표 및 히스토그램 그리기
+    void drawHistogram(int start, int end, int binCount, int scale) {
+        int binSize = (end - start) / binCount;
+        int[] bins = new int[binCount];
+        
+        for(int i = 0; i < num.length; i++) {
+            int val = num[i];
+            if(val >= start && val < end) {
+                int binIndex = (val - start) / binSize;
+                if(binIndex >= binCount) binIndex = binCount - 1;
+                bins[binIndex]++;
+            } else if(val == end) {
+                bins[binCount - 1]++;
+            }
+        }
+        
+        for(int i = 0; i < binCount; i++) {
+            int binStart = start + i * binSize;
+            int binEnd = binStart + binSize - 1;
+            
+            System.out.printf("%2d~%2d\t\t", binStart, binEnd);
+            
+            int count = bins[i] / scale;
+            for(int j = 0; j < count; j++) {
+                System.out.print("#");
+            }
+            System.out.println();
+        }
+    }
+    
+    void display() {
+        System.out.printf("%3d :", num.length);        
+        for(int i = 0; i < num.length; i++) 
+            System.out.printf("%3d ", num[i]);
+        System.out.println();
+    }   
+}
+
+public class NumbersTest {
+    public static void main(String[] args) {
+        int size = 100;
+        int data[] = new int[size];
+        for(int i = 0; i < size; i++) 
+            data[i] = (int)(Math.random() * 100);
+            
+        Numbers obj = new Numbers(data);
+        obj.display();
+        System.out.printf("Arithmetic Mean : %5.2f\n", obj.getArithmaticMean());
+        System.out.printf("Geometric Mean  : %5.2f\n", obj.getGeometricMean());      
+        System.out.printf("Harmonic Mean   : %5.2f\n", obj.getHarmonicMean());
+        System.out.printf("Median          : %5.2f\n", obj.getMedian());
+        
+        System.out.println("\n[Histogram]");
+        obj.drawHistogram(0, 100, 10, 1); // min, max, bin_count, scale
+    }
+}
+```
